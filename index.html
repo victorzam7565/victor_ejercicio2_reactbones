@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <!--este cdn nos trae Babel que es un transcompilador que nos permite correr ReactJS  Babel-->
+ <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+ <!--este cdn nos trae ReactJS en su modo base más puro -->
+   <script
+     crossorigin
+     src="https://unpkg.com/react@17/umd/react.development.js"
+   ></script>
+ 
+ <!--este CDN nos trae React DOM -->
+ 
+   <script
+     crossorigin  	src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+   ></script>
+ <!--este cdn nos trae Tailwind CSS que es un framework como los que vimos anteriormente para mejorar nuestros estilos -->
+   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+     rel="stylesheet"
+   />
+     <!--  -->
+    <title>Hola blenio</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    
+    <script type="text/babel">
+    //aqui el componente jsx que es la mescla de html y js
+      const App = () => {
+        return (
+          <div>
+            <Navbar />
+            <Card />
+            <InfoText />
+            <Contact />
+          </div>
+        );
+      };
+
+      //componente Navbar
+      const Navbar = (params) => {
+        return (
+          <nav className="mb-12 w-full h-16 bg-purple-600 flex flex-col justify-end items-center">
+            <ul className="flex flex-row w-16 h-full justify-center items-center">
+              <li className="mr-4 text-white">Aprendiendo </li>
+              <li className="mr-4 text-white">con </li>
+              <li className="mr-4 text-white">blenio</li>
+              <li className="mr-4 text-white"> contactenos</li>
+            </ul>
+          </nav>
+        );
+      };
+          
+     
+
+      // COMPONENTE Infotext
+      const InfoText = (params) => {
+        return (
+          <section className="mb-12 h-3/5 w-3/5 container mx-auto px-6 box-content bg-purple-300 rounded-md ">
+            <div className="h-full container p-4 box-border bg-purple-400 mx-auto">
+              <img
+                className="float-right w-120 h-120"
+                src="https://cdn4.vectorstock.com/i/1000x1000/46/53/spartan-logo-sparta-logo-spartan-helmet-logo-vector-24584653.jpg"
+                alt=""
+              />
+            <h1> holaaaaa</h1>
+            <p></p>
+          </div>
+        </section>
+        );  
+      };
+      // COMPONENTE card
+      const Card = (params) => {
+        return (
+          <div className="mb-12 container mx-auto px-4 box-content  border-4 rounded-md border-purple-700">
+          <h1> por aqui haciendo tareas</h1>
+          <p></p>
+        </div>  
+        );
+      };
+
+// COMPONENTE Contact
+      const Contact = (params) => {
+        return (
+          <section className="flex flex-col justify-center items-center  mb-12 container mx-auto px-4 box-border rounded-md ">
+            <form>
+              <input
+                placeholder="Tu correo electronico"
+                className="rounded-xl mx-4 h-8 px-2 shadow-lg  border border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+              />
+              <button className="rounded-md px-2 py-1  w-auto text-center text-white  bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 ">
+                enviar
+              </button>
+            </form>
+          </section>
+        );
+      };
+      ReactDOM.render(<App />, document.getElementById("app"));
+    </script>
+  </body>
+</html>
